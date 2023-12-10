@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book['title'] }} by {{ book['author'] }}
+                <a href="{{ url_for('edit_book', book_id=book['id']) }}">Edit</a>
+                <a href="{{ url_for('delete_book', book_id=book['id']) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_book') }}">Add a new book</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+    <body>
+<ul>
+    {% for item in items %}
+      <li>{{ item.name }} <a href="{{ url_for('delete', item_id=item.id) }}">Delete</a> <a href="{{ url_for('update', item_id=item.id) }}">Update</a></li>
+    {% endfor %}
+  </ul>
+  
+  <form action="/add" method="post">
+    <label for="item_name">Add Item:</label>
+    <input type="text" name="item_name" required>
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>

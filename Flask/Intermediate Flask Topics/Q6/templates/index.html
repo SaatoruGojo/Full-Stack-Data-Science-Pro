@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>
+            Upload
+        </title>
+    </head>
+    <body>
+        <form action = '/upload' method = 'post'  enctype='multipart/form-data'>
+            <input type='file' name = 'files' accept = '.jpg','.pdf','.png','.gif'>
+            <button type = 'submit'>Upload</button>
+        </form>
+        
+        <h2>Uploaded Files:</h2>
+        <ul>
+            {% for file in files %}
+                <li>{{ file }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+    </html>

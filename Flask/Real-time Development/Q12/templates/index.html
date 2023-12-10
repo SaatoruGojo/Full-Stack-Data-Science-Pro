@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Data Update</title>
+</head>
+<body>
+    <h1>Real-time Data Update</h1>
+    <div id="data-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+    <script>
+        // Connect to the SocketIO server
+        const socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Handle data updates
+        socket.on('data_updated', function(data) {
+            // Update the data in the HTML container
+            document.getElementById('data-container').innerHTML = '<p>Data: ' + data + '</p>';
+        });
+    </script>
+</body>
+</html>

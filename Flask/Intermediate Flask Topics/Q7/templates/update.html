@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <form action="{{ url_for('update', item_id=item.id) }}" method="post">
+            <label for="item_name">Update Item:</label>
+            <input type="text" name="item_name" value="{{ item.name }}" required>
+            <button type="submit">Update</button>
+          </form>
+          
+
+
+
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: {% if 'danger' in message %}red{% elif 'success' in message %}green{% endif %};">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+        <label for="username">Username:</label>
+        {{ form.username() }}
+        <br>
+        <label for="password">Password:</label>
+        {{ form.password() }}
+        <br>
+        {{ form.submit() }}
+    </form>
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
+</body>
+</html>

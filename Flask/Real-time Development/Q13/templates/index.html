@@ -1,0 +1,44 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Notifications</title>
+</head>
+<body>
+    <h1>Real-time Notifications</h1>
+    
+    <div>
+        <label for="recipient">Recipient SID:</label>
+        <input type="text" id="recipient" placeholder="Enter recipient SID">
+    </div>
+
+    <div>
+        <label for="message">Notification Message:</label>
+        <input type="text" id="message" placeholder="Enter notification message">
+    </div>
+
+    <button onclick="sendNotification()">Send Notification</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+    <script>
+        const socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        function sendNotification() {
+            const recipientSid = document.getElementById('recipient').value;
+            const message = document.getElementById('message').value;
+
+            // Send notification data to the server
+            socket.emit('notify', {'recipient_sid': recipientSid, 'message': message});
+        }
+
+        // Handle incoming notifications
+        socket.on('notification', function(data) {
+            alert('New Notification: ' + data.message);
+        });
+    </script>
+</body>
+</html>
