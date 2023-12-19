@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pokemon.css') }}">
+    <title>{{ pokemon }} Stats</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <a href="{{ url_for('index') }}" class="home-link">Home</a>
+    </div>
+
+    {% if error %}
+        <small style="color: red;">{{ error }}</small>
+    {% endif %}
+
+    {% if sprite %}
+        <div class="pokesprite">
+            <img src="{{ sprite }}" alt="{{ pokemon }} Sprite">
+            <h1>{{ pokemon }} Stats</h1>
+        </div>
+    {% endif %}
+
+    {% if stats %}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Stat</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Effort</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in stats %}
+                    <tr>
+                        <th scope="row">{{ stat['poke_statname'] }}</th>
+                        <td>{{ stat['poke_statbase'] }}</td>
+                        <td>{{ stat['poke_stateffort'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+
+</html>

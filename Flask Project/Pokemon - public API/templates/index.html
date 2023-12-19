@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Pokémon Search</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/pokemon" method="post" class="search-form">
+            <label for="pokemon">Enter Pokémon Name:</label>
+            <input type="text" id="pokemon" name="pokemon" placeholder="E.g., Pikachu" required>
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+</body>
+
+</html>

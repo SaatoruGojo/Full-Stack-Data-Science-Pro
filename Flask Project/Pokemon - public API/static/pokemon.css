@@ -1,0 +1,66 @@
+/* pokemon.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec; /* Very light pink background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full height of the viewport */
+    color: #333; /* Text color */
+}
+
+.navigation {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-link {
+    text-decoration: none;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.pokesprite {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pokesprite img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #4caf50; /* Green header background color */
+    color: #fff; /* White text color */
+}
+
+.table tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray on hover */
+}
+
+small {
+    display: block;
+    margin-top: 20px;
+    color: red;
+}
