@@ -1,0 +1,24 @@
+<!-- game_preferences.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Game Preferences</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Game Preferences</h2>
+        <form method="post" action="/select-preferences">
+            <label for="category">Choose a Category:</label>
+            <select id="category" name="category">
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Strategy">Strategy</option>
+            </select>
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </div>
+</body>
+</html>
