@@ -14,8 +14,8 @@ def index():
 
 @app.route('/google/')
 def google():
-    GOOGLE_CLIENT_ID = '75842008522-u1qbmhpmvsiri58rc5lmtd564akgn7ag.apps.googleusercontent.com'
-    GOOGLE_CLIENT_SECRET = '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'
+    GOOGLE_CLIENT_ID = 'GOOGLE_CLIENT_ID'
+    GOOGLE_CLIENT_SECRET = 'GOOGLE_CLIENT_SECRET'
 
     CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
     oauth.register(
