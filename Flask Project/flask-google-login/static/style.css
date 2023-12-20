@@ -1,0 +1,41 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-btn {
+    background-color: #4285f4;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    text-align: center; /* Center the text within the button */
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #357ae8;
+}
+
+#google {
+    margin-right: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.btn-text {
+    font-size: 18px;
+}
+
+/* Add more styles as needed */
